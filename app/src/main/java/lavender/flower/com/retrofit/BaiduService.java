@@ -3,7 +3,7 @@ package lavender.flower.com.retrofit;
 import lavender.flower.com.been.ShareContent;
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * Created by ningqiangzhao on 16/7/8.
@@ -11,6 +11,6 @@ import retrofit2.http.Path;
  */
 
 public interface BaiduService {
-    @GET("app/share?content_id={content_id}&type_id=2")
-    Call<ShareContent> getShareContent(@Path("content_id") String content_id);
+    @GET("app/share?&type_id=2")
+    Call<ShareContent> getShareContent(@Query("content_id") String content_id);
 }
