@@ -1,9 +1,12 @@
 package lavender.flower.com.retrofit;
 
+import java.util.Map;
+
 import lavender.flower.com.been.ShareContent;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 
 /**
  * Created by ningqiangzhao on 16/7/8.
@@ -13,4 +16,7 @@ import retrofit2.http.Query;
 public interface BaiduService {
     @GET("app/share?&type_id=2")
     Call<ShareContent> getShareContent(@Query("content_id") String content_id);
+
+    @GET("app/share")
+    Call<ShareContent> getShareContent(@QueryMap Map<String,String> options);
 }

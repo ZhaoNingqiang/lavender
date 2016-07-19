@@ -1,4 +1,4 @@
-package lavender.flower.com.lavender;
+package lavender.flower.com.activity;
 
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
@@ -14,5 +14,6 @@ public class BaseActivity extends AppCompatActivity {
     protected<T extends View> T findView(@IdRes int id){
         return  (T)findViewById(id);
     }
+
 
 }
