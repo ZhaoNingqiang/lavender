@@ -1,15 +1,15 @@
 package lavender.flower.com.activity;
 
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
+import butterknife.BindView;
+import butterknife.OnClick;
 import lavender.flower.com.been.ShareContent;
 import lavender.flower.com.lavender.R;
 import lavender.flower.com.retrofit.BaiduService;
@@ -29,20 +29,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitActivity extends BaseActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
+    @BindView(R.id.content)
     TextView content;
-    Button click;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_retrofit);
-        content = findView(R.id.content);
-        click = findView(R.id.click);
-        click.setOnClickListener(this);
+    protected int getLayoutId() {
+        return R.layout.activity_retrofit;
     }
 
 
-    @Override
+    @OnClick(R.id.click)
     public void onClick(View view) {
 
         Interceptor interceptor = new Interceptor() {
